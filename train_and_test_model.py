@@ -93,9 +93,9 @@ if __name__ == "__main__":
         final_breed_label = enumerated_breeds[breed_name]
         labels.append(final_breed_label)
 
-    train_ids = ids[:30]
+    train_ids = ids[:10000]
     test_ids = ids[10000:]
-    train_labels = labels[:30]
+    train_labels = labels[:10000]
     test_labels = labels[10000:]
 
     train_x, valid_x = train_test_split(train_ids, test_size=0.2, random_state=42)
