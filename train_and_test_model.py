@@ -114,7 +114,7 @@ if __name__ == "__main__":
     valid_dataset = tf_dataset(valid_x, valid_y, batch=batch)
 
     callbacks = [
-        ModelCheckpoint("t_v1.h5", verbose=1, save_best_only=True),
+        ModelCheckpoint("model_v4.h5", verbose=1, save_best_only=True),
         ReduceLROnPlateau(factor=0.1, patience=5, min_lr=1e-6),
         tensorboard
     ]
