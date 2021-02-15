@@ -10,10 +10,13 @@ import tensorflow as tf
 import pandas as pd
 import os
 
+from constants import HOST, PORT, MODEL_FILENAME
+
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 
-model = tf.keras.models.load_model("model_v4.h5")
+model = tf.keras.models.load_model(MODEL_FILENAME)
 path = "Dog Breed Identification/"
 labels_path = os.path.join(path, "labels.csv")
 
@@ -49,4 +52,4 @@ def login():
         return "<h2>not implemented handling to this request</h2>"
 
 
-app.run()
+app.run(host=HOST, port=PORT)
